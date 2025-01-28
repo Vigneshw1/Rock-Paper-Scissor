@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rock.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Rock paper Scissor</h1>
+        <button class="btn" onclick="start()">Start</button>
+        <h2 id="Content"></h2>
+        <p>Choose the choice:</p>
+        <button class="btn" onclick="play('Rock')">Rock</button>
+        <button class="btn" onclick="play('Paper')">Paper</button>
+        <button class="btn" onclick="play('Scissor')">Scissor</button>
+        <h3 id="result"></h3>
+    </div>
+    <script>
+        function start(){
+            document.getElementById("Content").innerText="Game Started" 
+        }
+        let arr=["Rock","Paper","Scissor"]
+        let computerChoice=arr[Math.floor(Math.random()*arr.length)]
+        function play(userChoice){
+             let result=(computerChoice==userChoice)?"It's Draw":
+             ((computerChoice=="Rock" && userChoice=="Paper")||
+             (computerChoice=="Paper" && userChoice=="Scissor")||
+             (computerChoice=="Scissor" && userChoice=="Rock"))?"You Won":"You Lose"
+             document.getElementById("result").innerText=result
+        }
+    </script>
+</body>
+</html>
+
+
